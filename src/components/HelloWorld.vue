@@ -1,6 +1,6 @@
 <template>
 <v-container>
-  <!-- <PracticaOne/> -->
+   <PracticaOne/>
   <!-- <Boton nombre="enviar" type="submit" class="success"/> -->
   <!-- <CardNoticias
   v-for="items in noticias"
