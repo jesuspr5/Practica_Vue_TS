@@ -1,9 +1,11 @@
 <template>
-    <v-btn  
+    <v-btn 
     :type="type"
-    :disabled="disabled"
+    :disabled=false
     rounded
-    :class="asignarClase" >
+    :class="asignarClase"
+     >
+    
     {{ nombre }}
     </v-btn>
 </template>
@@ -12,8 +14,10 @@
 import { computed } from 'vue';
 type TYPE_BUTTON = 'button'|'submit'|'reset';
 type TYPE_CLASS = 'Primary'| 'success'| 'warning'| 'error'|'danger';
+
 const props =defineProps(
 {
+   
     nombre:{
         type:String,
         required:true
@@ -31,19 +35,25 @@ const props =defineProps(
            default:'button' 
 
     },
-    class:{
+    color:{
         type:String as ()=>TYPE_CLASS,
         default:'primary'
         
-    }
+    },
+   
 },
 );
 const asignarClase = computed(() => {
-    if(props.class){
-       return `btn btn-${props.class}`
+    if(props.color){
+       return `btn btn-${props.color} `
     }
   
 });
+
+
+
+
+
 </script>
 
 <style scoped>
